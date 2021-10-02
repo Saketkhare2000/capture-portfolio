@@ -1,63 +1,43 @@
 import React from "react";
 import home1 from "../image/home1.png";
 import { About, Description, Hide, Image } from "../styles";
-
+import Wave from "./Wave";
 //Framer Motion
 import { motion } from "framer-motion";
-
+import { titleAnim, fade, photoAnim } from "../animation";
 const AboutSection = () => {
-  const titleAnimation = {
-    hidden: {
-      opacity: 0,
-    },
-    show: {
-      opacity: 1,
-      transition: { duration: 1 },
-    },
-  };
-  const container = {
-    hidden: {
-      x: 100,
-    },
-    show: {
-      x: 0,
-      transition: {
-        ease: "easeOut",
-        staggerChildren: 0.25,
-      },
-    },
-  };
-
   return (
     <About>
       <Description>
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="title"
-        >
+        <motion.div className="title">
           <Hide>
-            <motion.h2 variants={titleAnimation}>We work to make</motion.h2>
+            <motion.h2 variants={titleAnim}>We work to make</motion.h2>
           </Hide>
           <Hide>
-            <motion.h2 variants={titleAnimation}>
+            <motion.h2 variants={titleAnim}>
               Your <span>dreams</span> come
             </motion.h2>
           </Hide>
           <Hide>
-            <motion.h2 variants={titleAnimation}>true</motion.h2>
+            <motion.h2 variants={titleAnim}>true</motion.h2>
           </Hide>
         </motion.div>
-        <p>
+        <motion.p variants={fade}>
           Contact us for any photography or videography ideas that you have. We
           have professionals with amazing skills.
-        </p>
-        <button>Contact US</button>
+        </motion.p>
+        <motion.button variants={fade}>Contact US</motion.button>
       </Description>
       <Image>
-        <img src={home1} alt="guy with a camera" />
+        <motion.img
+          variants={photoAnim}
+          initial="hidden"
+          animate="show"
+          src={home1}
+          alt="guy with a camera"
+        />
       </Image>
+      <Wave />
     </About>
   );
 };
