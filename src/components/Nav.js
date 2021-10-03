@@ -25,6 +25,9 @@ const Nav = () => {
 };
 const StyledNav = styled.nav`
   min-height: 10vh;
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   margin: auto;
   justify-content: space-between;
@@ -47,6 +50,22 @@ const StyledNav = styled.nav`
   #logo {
     font-style: italic;
     font-size: 2rem;
+  }
+  @media (max-width: 1300px) {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    ul {
+      padding: 2rem;
+      justify-content: space-around;
+      width: 100%;
+    }
+    li {
+      padding: 0;
+    }
+    #logo {
+      display: inline-block;
+      margin: 2rem;
+    }
   }
 `;
 

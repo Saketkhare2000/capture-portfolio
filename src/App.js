@@ -4,7 +4,7 @@ import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import OurWork from "./pages/OurWork";
 import MovieDetail from "./pages/MovieDetail";
-
+import ScrollTop from "./components/ScrollTop";
 //Router
 import { Switch, Route, useLocation } from "react-router-dom";
 
@@ -32,6 +32,7 @@ function App() {
             <ContactUs />
           </Route>
         </Switch>
+        <ScrollTop />
       </AnimatePresence>
     </>
   );
